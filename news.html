@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Include head template -->
+    {$template:_head}
+</head>
+<body class="index">
+
+<!-- Container -->
+<main id="page" class="container">
+
+    <!-- Header -->
+    <div class="wrap-block grid_2 m-grid_2 m-prefix_1 m-suffix_1 d-visible">
+        <header class="" role="banner">
+            <h1 class="logo">
+                <a href="{$website:url}" title="{$page:h1}">
+                    {$plugin:widcard:BizOrgName:notag}
+                    <img src="{$plugin:widcard:bizLogo:url}" alt="{$plugin:widcard:BizOrgName:notag}" width="80" height="40">
+                </a>
+            </h1>
+                    <span class="slogan">
+                        We search.<br />You travel.
+                    </span>
+        </header>
+
+        <div class="some-text">
+            {$content:text:static}
+        </div>
+    </div>
+
+    <div class="grid_8 main">
+        <p class="top-text">{$header:toptext:static}</p>
+        <!-- Main Menu -->
+        <nav id="main-menu" class="d-visible" role="navigation">
+            {$menu:main:_main menu}
+        </nav>
+        <div class="news-page-teaser mb20px">
+            {$page:preview:crop:776x200}
+        </div>
+        <div class="content box-white-bg opacity-bg">
+            <!-- news content -->
+            <div class="share-links fl-right">
+                {$template:_social share}
+            </div>
+            {newscontent}
+            <h2 class="mt0px">{$page:h1}</h2>
+            {$content:content_key1}
+            {/newscontent}
+        </div>
+    </div>
+    <aside class="grid_2 ">
+        <div class="box-grey-bg opacity-bg wrap thin">
+            <div class="social-block">{$template:_social links}</div>
+        </div>
+        <ul class="offer-list mb20px">
+                    <li>
+                        <span>{$header:img1:static}</span>
+                        {$imageonly:img1:152:static}
+                        <p>{$header:img11:static}</p>
+                    </li>
+                    <li>
+                        <span>{$header:img2:static}</span>
+                        {$imageonly:img2:152:static}
+                        <p>{$header:img21:static}</p>
+                    </li>
+                    <li>
+                        <span>{$header:img3:static}</span>
+                        {$imageonly:img3:152:static}
+                        <p>{$header:img31:static}</p>
+                    </li>
+                </ul>
+    </aside>
+</main>
+
+<!-- Footer -->
+<!-- Include Footer template -->
+<!--{$ template:_footer}-->
+<!-- Include Footer template -->
+                {$template:_footer}
+<!-- Include mobile elements template -->
+{$template:_mobile elements}
+
+<!-- Include scripts template -->
+{$template:_scripts}
+</body>
+</html>
