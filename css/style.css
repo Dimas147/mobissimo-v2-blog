@@ -15,31 +15,11 @@ main {
   min-height: 100%;
 }
 header {
-  padding-top: 15em;
   margin-bottom: 1em;
   overflow: hidden;
   text-align: center;
   font-family: 'Raleway', Arial, sans-serif;
   border-radius: 0 0 10px 10px;
-  color: #575656;
-  background: url("../images/header-bg.png") center 100% no-repeat transparent;
-  background-size: 100%;
-}
-header:after,
-header:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  width: 4px;
-  height: 14.5em;
-  border-radius: 1em;
-  background: #f16f29;
-}
-header:before {
-  left: 47%;
-}
-header:after {
-  right: 47%;
 }
 @media only screen and (max-width: 800px) {
   header {
@@ -54,21 +34,15 @@ header:after {
     background-position: center -3rem;
   }
 }
-header.inner {
-  padding-top: 13em;
-}
-header.inner:after,
-header.inner:before {
-  height: 11em;
-}
 header .logo {
   margin-top: 0;
+  text-align: left;
 }
 header .logo a {
   display: inline-block;
   vertical-align: middle;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+  margin-top: -120px;
+  max-width: 166px;
   font-family: inherit;
   font-weight: 400;
   text-decoration: none;
@@ -402,7 +376,8 @@ aside .offer-list li {
 .news-page-teaser img {
   width: 100%;
 }
-.news-cloud a {
+.news-cloud a,
+.news-cloud span {
   display: block;
   text-decoration: none;
   font-weight: 700;
@@ -420,6 +395,7 @@ aside .aside-box {
 }
 footer {
   padding: 0.5em;
+  margin-bottom: 20px;
   border: 2px solid #ffffff;
   border-radius: 0.5em;
   color: #575656;
@@ -504,9 +480,44 @@ footer .flag-list .com {
 #go-top:hover,
 #go-top:active,
 #go-top.active {
-  color: #FFF;
+  color: #ffffff;
   border-color: #f16f29;
   background-color: #f16f29;
+}
+.container.width-1200 {
+  width: 1200px;
+}
+.container.width-1200 > .grid_2 {
+  width: 21%;
+}
+.container.width-1200 > .grid_8 {
+  width: 58%;
+}
+.mt136 {
+  margin-top: 136px;
+}
+.affix {
+  position: fixed !important;
+}
+.affix-top {
+  position: absolute !important;
+  top: 0;
+}
+.affix-bottom {
+  position: absolute !important;
+}
+.floating-block {
+  position: relative;
+  height: 1px;
+  padding-right: 75px;
+}
+.right-ad {
+  padding-left: 75px;
+  overflow: hidden;
+}
+.news-page-teaser {
+  border-radius: 30px;
+  overflow: hidden;
 }
 form::after {
   content: "";
@@ -538,7 +549,7 @@ form .captcha .captcha_image a {
   font-family: 'Lato', Arial, sans-serif;
   display: inline-block;
   vertical-align: middle;
-  color: #FFF;
+  color: #ffffff;
   border-color: #e43007;
   background-color: #f16f29;
   border-radius: 0.75em;
@@ -562,7 +573,7 @@ form .captcha .recaptcha_links a:active,
 form .captcha .captcha_image a:active,
 form .captcha .recaptcha_links a.active,
 form .captcha .captcha_image a.active {
-  color: #FFF;
+  color: #ffffff;
   border-color: #b22605;
   background-color: #d9550e;
 }
@@ -725,7 +736,7 @@ textarea,
 input {
   font-family: 'Lato', Arial, sans-serif;
   border: 1px solid transparent;
-  background-color: #fff;
+  background-color: #ffffff;
   color: #575656;
   border-radius: 1em;
   transition: border 0.3s;
@@ -949,7 +960,7 @@ textarea.resize {
   transition: all 0.3s;
   background: rgba(0, 0, 0, 0.1);
   position: absolute;
-  border: 1px solid #fff;
+  border: 1px solid #ffffff;
   z-index: 1;
   left: 0;
   top: 0;
@@ -1109,7 +1120,7 @@ textarea.resize {
   margin: 0;
   line-height: 1.5;
   padding: 4px;
-  color: #FFF;
+  color: #ffffff;
   text-align: center;
   font-size: 0.85em;
   white-space: nowrap;
@@ -1164,7 +1175,7 @@ textarea.resize {
   vertical-align: middle;
   cursor: pointer;
   margin: 0 3px;
-  color: #FFF;
+  color: #ffffff;
   background: #FFF;
   border-radius: 14px;
   width: 10px;
@@ -1180,12 +1191,12 @@ textarea.resize {
 }
 .cycle-slideshow .cycle-pager > *.cycle-pager-active {
   cursor: default;
-  color: #FFF;
+  color: #ffffff;
   background: #f16f29;
 }
 .cycle-slideshow [class*="cycle-"].action-button {
   background: #f16f29;
-  color: #FFF;
+  color: #ffffff;
   position: absolute;
   top: 50%;
   z-index: 20;
@@ -1204,7 +1215,7 @@ textarea.resize {
 }
 .cycle-slideshow [class*="cycle-"].action-button:hover {
   background: #d9550e;
-  color: #FFF;
+  color: #ffffff;
 }
 .cycle-slideshow [class*="cycle-"].action-button::before {
   font-family: flexkit-icons;
@@ -1234,7 +1245,7 @@ textarea.resize {
   position: absolute;
   width: 100%;
   z-index: 100;
-  background-color: #FFF;
+  background-color: #ffffff;
   border-width: 0 !important;
   padding: 0 !important;
   overflow: hidden;
@@ -1566,7 +1577,7 @@ body.tablet .ui-datepicker {
   font-family: 'Lato', Arial, sans-serif;
   display: inline-block;
   vertical-align: middle;
-  color: #FFF;
+  color: #ffffff;
   border-color: #e43007;
   background-color: #f16f29;
   border-radius: 0.75em;
@@ -1581,7 +1592,7 @@ body.tablet .ui-datepicker {
 .dataTable a.btn_ping:hover,
 .dataTable a.btn_ping:active,
 .dataTable a.btn_ping.active {
-  color: #FFF;
+  color: #ffffff;
   border-color: #b22605;
   background-color: #d9550e;
 }
@@ -2045,7 +2056,7 @@ aside .compare-providers {
   font-family: 'Lato', Arial, sans-serif;
   display: inline-block;
   vertical-align: middle;
-  color: #FFF;
+  color: #ffffff;
   border-color: #e43007;
   background-color: #f16f29;
   -webkit-user-select: none;
@@ -2063,7 +2074,7 @@ aside .compare-providers {
 .results-table .price span:hover,
 .results-table .price span:active,
 .results-table .price span.active {
-  color: #FFF;
+  color: #ffffff;
   border-color: #b22605;
   background-color: #d9550e;
 }
@@ -2242,7 +2253,7 @@ aside .compare-providers {
   display: none;
   background: rgba(85, 85, 85, 0.9);
   transition: all, 0.5s, ease;
-  color: #FFF;
+  color: #ffffff;
   padding: 8px;
 }
 .mobissimo-recomm li:hover .recommendation-detail-text {
@@ -2356,7 +2367,7 @@ aside .compare-providers {
 }
 .api-form .box-compare fieldset {
   border-radius: 0 0 0 0;
-  box-shadow: 0 0 0 #000;
+  box-shadow: 0 0 0 #000000;
   padding: 0;
 }
 .api-form .box-compare .compare-providers {
@@ -2492,7 +2503,7 @@ html.tablet .mobile-loader::before {
   content: "";
   display: block;
   border: 5px solid transparent;
-  border-top-color: #FFF;
+  border-top-color: #ffffff;
   position: absolute;
   left: 0;
   right: 0;

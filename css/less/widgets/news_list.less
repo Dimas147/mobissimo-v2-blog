@@ -15,7 +15,6 @@
 
     .news-item-title{
         display         : block;
-        text-align      : center;
         text-decoration : none;
         font-weight     : 700;
         font-size       : 1.25em;
@@ -60,6 +59,13 @@
     .newslog-tag-filter{
         &::before{
             content : "\e023";
+        }
+    }
+    aside &{
+        .grid-elements(1; 0; true; 1; 1);
+        .news-item-title{
+            font-weight: normal;
+            line-height: 1.1;
         }
     }
 }

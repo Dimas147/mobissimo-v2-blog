@@ -1,99 +1,90 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <!-- Include head template -->
-        {$template:_head}
-    </head>
-    <body class="index">
+<head>
+    <!-- Include head template -->
+    {$template:_head}
+</head>
+<body class="index">
 
-        <!-- Container -->
-        <main id="page" class="container">
+<!-- Container -->
+<main id="page" class="container width-1200">
 
-            <!-- Header -->
-            <div class="wrap-block grid_2 m-grid_2 m-prefix_1 m-suffix_1 d-visible">
-                <header class="" role="banner">
-                    <h1 class="logo">
-                        <a href="{$website:url}" title="{$page:h1}">
-                            {$plugin:widcard:BizOrgName:notag}
-                            <img src="{$plugin:widcard:bizLogo:url}" alt="{$plugin:widcard:BizOrgName:notag}" width="80" height="40">
-                        </a>
-                    </h1>
-                    <span class="slogan">
-                        We search.<br />You travel.
-                    </span>
-                </header>
-                
-                <aside class="box-white-bg opacity-bg news-cloud">
-                    <h4 class="text-center">{$header:tag-cloud:static}</h4
-                    {$news:tagcloud}
-                </aside>
+    <!-- Header -->
 
-                <div class="some-text">
-                    {$content:text:static}
-                </div>
-            </div>
-
-            <div class="grid_8 main">
-                <p class="top-text">{$header:toptext:static}</p>
-                <!-- Main Menu -->
-                <nav id="main-menu" class="d-visible" role="navigation">
-                    {$menu:main:_main menu}
-                    
-                </nav>
-                <div class="content box-white-bg opacity-bg">
-                    {$content:mobissimoform}
-                </div>
-                <!-- Content box -->
-                <div class="box-white-bg opacity-bg wrap ">
-                    <ul class="news-list">
-                        {newslist:NEWS-LIST_NAME}
-                            <li class="news-item">
-                                {$news:actions}
-                                <a class="news-item-title mb10px" href="{$news:url}">{$news:title}</a>
-                                <a class="news-item-image text-center" href="{$news:url}">
-                                    <img src="{$news:preview}" alt="{$news:title:inline}"/>
-                                </a>
-                                <p class="news-item-description">{$news:teaser::150}</p>
-                            </li>
-                        {/newslist}
-                    </ul>
-                </div>
-                <!-- Footer -->
-                <!-- Include Footer template -->
-                {$template:_footer}
-            </div>
-            <aside class="grid_2 ">
-                <div class="box-grey-bg opacity-bg wrap thin">
-                    <div class="social-block">{$template:_social links}</div>
-                </div>
-                <ul class="offer-list mb20px">
-                    <li>
-                        <span>{$header:img1:static}</span>
-                        {$imageonly:img1:152:static}
-                        <p>{$header:img11:static}</p>
-                    </li>
-                    <li>
-                        <span>{$header:img2:static}</span>
-                        {$imageonly:img2:152:static}
-                        <p>{$header:img21:static}</p>
-                    </li>
-                    <li>
-                        <span>{$header:img3:static}</span>
-                        {$imageonly:img3:152:static}
-                        <p>{$header:img31:static}</p>
-                    </li>
-                </ul>
+    <div class="wrap-block grid_2 alpha omega m-grid_2 m-prefix_1 m-suffix_1 d-visible floating-block">
+        <div data-spy="affix" data-offset-top="150" data-offset-bottom="200">
+            {$template:_header}
+            <aside class="box-white-bg opacity-bg news-cloud">
+                <h4 class="text-center">{$header:tag-cloud:static}</h4>
+                {$news:tagcloud}
             </aside>
-        </main>
+            <div class="some-text">
+                {$content:text:static}
+            </div>
+        </div>
+    </div>
 
+    <div class="grid_8 alpha omega main">
+        <p class="top-text">{$header:toptext:static}</p>
+        <!-- Main Menu -->
+        <nav id="main-menu" class="d-visible" role="navigation">
+            {$menu:main:_main menu}
+
+        </nav>
+        <div class="content box-white-bg opacity-bg">
+            {$content:mobissimoform}
+        </div>
+        <!-- Content box -->
+        <div class="box-white-bg opacity-bg wrap ">
+            <ul class="news-list">
+                {newslist:NEWS-LIST_NAME}
+                <li class="news-item">
+                    {$news:actions}
+                    <a class="news-item-title mb10px" href="{$news:url}">{$news:title}</a>
+                    <a class="news-item-image text-center" href="{$news:url}">
+                        <img src="{$news:preview}" alt="{$news:title:inline}"/>
+                    </a>
+                    <p class="news-item-description">{$news:teaser:150}</p>
+                </li>
+                {/newslist}
+            </ul>
+        </div>
         <!-- Footer -->
         <!-- Include Footer template -->
-        <!--{$ template:_footer}-->
+        {$template:_footer}
+    </div>
+    <aside class="grid_2 alpha omega mt136 right-ad" role="complementary">
+        <div class="box-grey-bg opacity-bg wrap thin">
+            <div class="social-block text-center">{$template:_social links}</div>
+        </div>
+        <ul class="news-list">
+            {newslist:news-list-right}
+            <li class="news-item">
+                {$news:actions}
+                <a class="news-item-title text-left mb10px" href="{$news:url}">{$news:title}</a>
+                <a class="news-item-image" href="{$news:url}">
+                    {$imageonly:news-{$news:id}:152:static:readonly}
+                </a>
+                {adminonly}
+                <div class="admin-hide-image">
+                    {$imageonly:news-{$news:id}:152:static}
+                </div>
+                {/adminonly}
+                <p class="news-item-description">{$news:teaser::150}</p>
+            </li>
+            {/newslist}
+        </ul>
+    </aside>
+</main>
 
-        <!-- Include mobile elements template -->
-        {$template:_mobile elements}
+<!-- Footer -->
+<!-- Include Footer template -->
+<!--{$ template:_footer}-->
 
-        <!-- Include scripts template -->
-        {$template:_scripts}
-    </body>
+<!-- Include mobile elements template -->
+{$template:_mobile elements}
+
+<!-- Include scripts template -->
+{$template:_scripts}
+</body>
 </html>
