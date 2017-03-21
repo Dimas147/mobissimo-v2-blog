@@ -245,6 +245,11 @@ aside .relatedpages li p {
 .news-item .news-item-image {
   display: block;
   margin-bottom: 1em;
+  border-radius: 2em;
+  overflow: hidden;
+}
+.news-item .news-item-image a {
+  display: block;
 }
 .news-item .news-item-image img {
   width: 100%;

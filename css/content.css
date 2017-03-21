@@ -2597,8 +2597,17 @@ a.inherit-color:hover {
 .absolute {
   position: absolute;
 }
+.admin-hide-image {
+  margin-bottom: 10px;
+}
 .admin-hide-image > img {
   display: none;
+}
+.admin-hide-image a img {
+  display: none;
+}
+.admin-hide-image a.tpopup img {
+  display: block;
 }
 .news-page p > img {
   width: 100%;

@@ -31,12 +31,12 @@
             {$menu:main:_main menu}
         </nav>
         <div class="news-page-teaser mb20px">
-            {$directupload:news-image-{$news:id}:news-images:700::crop:nolink}
+            {$directupload:news-image-{$news:id}:news-images:250::crop-720x250:nolink}
         </div>
         <div class="content box-white-bg opacity-bg">
             <!-- news content -->
-            <div class="share-links fl-right">
-                {$template:_social share}
+            <div class="box-grey-bg opacity-bg wrap thin fl-right">
+                <div class="social-block padding text-center">{$template:_social links}</div>
             </div>
             {newscontent}
             <h2 class="mt0px">{$page:h1}</h2>
@@ -54,15 +54,15 @@
             <li class="news-item">
                 {$news:actions}
                 <a class="news-item-title text-left mb10px" href="{$news:url}">{$news:title}</a>
-                <a class="news-item-image" href="{$news:url}">
+                <div class="news-item-image">
                     {$imageonly:news-{$news:id}:152:static:readonly}
-                </a>
+                </div>
                 {adminonly}
                 <div class="admin-hide-image">
                     {$imageonly:news-{$news:id}:152:static}
                 </div>
                 {/adminonly}
-                <p class="news-item-description">{$news:teaser:150}</p>
+                <p class="news-item-description">{$news:teaser::150}</p>
             </li>
             {/newslist}
         </ul>

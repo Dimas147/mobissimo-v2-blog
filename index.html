@@ -62,9 +62,9 @@
             <li class="news-item">
                 {$news:actions}
                 <a class="news-item-title text-left mb10px" href="{$news:url}">{$news:title}</a>
-                <a class="news-item-image" href="{$news:url}">
+                <div class="news-item-image">
                     {$imageonly:news-{$news:id}:152:static:readonly}
-                </a>
+                </div>
                 {adminonly}
                 <div class="admin-hide-image">
                     {$imageonly:news-{$news:id}:152:static}
