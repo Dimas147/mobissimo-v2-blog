@@ -7,16 +7,22 @@
 <body class="news-page">
 
 <!-- Container -->
-<main id="page" class="container width-1200">
+<main id="page" class="container">
 
     <!-- Header -->
 
-    <div class="wrap-block grid_2 alpha omega m-grid_2 m-prefix_1 m-suffix_1 d-visible floating-block">
+    <div class="wrap-block grid_2 alpha omega floating-block left-side">
         <div data-spy="affix" data-offset-top="150" data-offset-bottom="200">
             {$template:_header}
-            <aside class="box-white-bg opacity-bg news-cloud">
+            <aside>
+                <a class="btn sb1" href="http://blog.mobissimo.it">Cerca nel blog</a>
+            </aside>
+            <aside class="box-white-bg thin opacity-bg news-cloud">
                 <h4 class="text-center">{$header:tag-cloud:static}</h4>
                 {$news:tagcloud}
+            </aside>
+            <aside>
+                <a class="btn sb2" href="http://blog.mobissimo.it"><span>Invia il tuo <br /> articolo</span></a>
             </aside>
             <div class="some-text">
                 {$content:text:static}
@@ -30,27 +36,32 @@
         <nav id="main-menu" class="d-visible" role="navigation">
             {$menu:main:_main menu}
         </nav>
-        <div class="news-page-teaser mb20px">
+        <div class="news-page-teaser">
             {$directupload:news-image-{$news:id}:news-images:250::crop-720x250:nolink}
         </div>
         <div class="content box-white-bg opacity-bg">
             <!-- news content -->
-            <div class="box-grey-bg opacity-bg wrap thin fl-right">
-                <div class="social-block padding text-center">{$template:_social links}</div>
+            <div class="box-grey-bg opacity-bg wrap thin fl-right social-accounts">
+                <div class="social-block padding text-center">{$template:_social share}</div>
             </div>
             {newscontent}
             <h2 class="mt0px">{$page:h1}</h2>
             {$content:content_key1}
             {/newscontent}
         </div>
+        <div id="news-paginator" class="text-center">
+            <div class="news-list-pagination paginator">
+                <a class="paginations" href="http://blog.mobissimo.it">Home page</a>
+            </div>
+        </div>
         {$template:_footer}
     </div>
-    <aside class="grid_2 alpha omega mt136 right-ad" role="complementary">
-        <div class="box-grey-bg opacity-bg wrap thin">
+    <aside class="grid_2 alpha omega right-side aside-margin" role="complementary">
+        <div class="box-grey-bg opacity-bg wrap thin social-accounts">
             <div class="social-block text-center">{$template:_social links}</div>
         </div>
         <ul class="news-list">
-            {newslist:news-list-right}
+            {newslist:news-list-right:3}
             <li class="news-item">
                 {$news:actions}
                 <a class="news-item-title text-left mb10px" href="{$news:url}">{$news:title}</a>
@@ -62,7 +73,7 @@
                     {$imageonly:news-{$news:id}:152:static}
                 </div>
                 {/adminonly}
-                <p class="news-item-description">{$news:teaser::150}</p>
+                <p class="news-item-description mb0px">{$news:teaser::150}</p>
             </li>
             {/newslist}
         </ul>

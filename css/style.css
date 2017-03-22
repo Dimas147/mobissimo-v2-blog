@@ -15,10 +15,10 @@ main {
   min-height: 100%;
 }
 header {
-  margin-bottom: 1em;
+  margin-bottom: 2.5em;
   overflow: hidden;
   text-align: center;
-  font-family: 'Raleway', Arial, sans-serif;
+  font-family: 'Lato', Arial, sans-serif;
   border-radius: 0 0 10px 10px;
 }
 @media only screen and (max-width: 800px) {
@@ -62,8 +62,9 @@ header .slogan {
 }
 .top-text {
   text-align: right;
-  font-size: 2.5em;
-  color: #ffffff;
+  font-size: 2.75em;
+  color: #7e1710;
+  font-weight: 300;
 }
 .main {
   margin-top: 5em;
@@ -74,9 +75,9 @@ header .slogan {
   }
 }
 .box-white-bg {
-  border-radius: 2em;
-  padding: 1.5em 1em;
-  margin-bottom: 1em;
+  border-radius: 24px;
+  padding: 1.1em 2.3em;
+  margin-bottom: 2.2em;
 }
 .box-white-bg.opacity-bg {
   background: rgba(255, 255, 255, 0.65);
@@ -94,6 +95,9 @@ header .slogan {
 }
 .box-grey-bg.thin {
   padding: 0.25em;
+}
+.box-grey-bg.social-accounts {
+  border-radius: 10px;
 }
 .ng-table-pager .btn-group {
   display: none;
@@ -262,7 +266,7 @@ header .slogan {
   list-style: none;
 }
 .offer-list >* {
-  font-size: 14px;
+  font-size: 1rem;
   display: inline-block;
   vertical-align: middle;
 }
@@ -356,7 +360,7 @@ aside .offer-list li {
   padding-top: 6em;
 }
 .social-block {
-  font-size: 0.8em;
+  font-size: 1em;
 }
 @media only screen and (max-width: 480px) {
   .social-block {
@@ -366,6 +370,13 @@ aside .offer-list li {
 .social-block.padding {
   padding-left: 10px;
   padding-right: 10px;
+}
+aside .social-block .btn {
+  width: 1.9em;
+}
+.social-accounts.box-grey-bg {
+  margin-bottom: 1.5em;
+  padding: 5px 0;
 }
 .some-text {
   position: fixed;
@@ -380,15 +391,32 @@ aside .offer-list li {
   left: 100%;
   top: 6em;
 }
+.news-page-teaser {
+  margin-bottom: 2.5em;
+}
 .news-page-teaser img {
   width: 100%;
+}
+.news-cloud {
+  margin-bottom: 1rem;
 }
 .news-cloud a,
 .news-cloud span {
   display: block;
   text-decoration: none;
-  font-weight: 700;
+  font-weight: normal;
   color: #575656;
+  margin-bottom: 1em;
+  text-transform: lowercase;
+  line-height: 1.1;
+}
+.news-cloud a:last-child,
+.news-cloud span:last-child {
+  margin-bottom: 0;
+}
+.news-cloud h4 {
+  font-size: 1.3em;
+  margin-bottom: 1.3em;
 }
 aside .aside-box {
   margin-bottom: 30px;
@@ -488,24 +516,18 @@ footer .flag-list .com {
   border-color: #f16f29;
   background-color: #f16f29;
 }
-.container.width-1200 {
-  width: 1200px;
-}
-.container.width-1200 > .grid_2 {
-  width: 21%;
-}
-.container.width-1200 > .grid_8 {
-  width: 58%;
-}
 .mt136 {
   margin-top: 136px;
 }
 .affix {
   position: fixed !important;
+  top: -7.2rem;
+}
+.no-top-text .affix {
+  top: -2.8rem;
 }
 .affix-top {
   position: absolute !important;
-  top: 0;
 }
 .affix-bottom {
   position: absolute !important;
@@ -513,15 +535,72 @@ footer .flag-list .com {
 .floating-block {
   position: relative;
   height: 1px;
-  padding-right: 75px;
-}
-.right-ad {
-  padding-left: 75px;
-  overflow: hidden;
 }
 .news-page-teaser {
   border-radius: 30px;
   overflow: hidden;
+}
+.main {
+  margin-top: 5em;
+  padding-left: 44px;
+  padding-right: 44px;
+}
+@media only screen and (max-width: 480px) {
+  .main {
+    margin-top: 0;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .main {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.main.mt {
+  margin-top: 9em;
+}
+.left-side {
+  padding-right: 34px;
+}
+@media only screen and (max-width: 800px) {
+  .left-side {
+    padding-right: 0;
+  }
+}
+.left-side .btn {
+  display: block;
+  margin-bottom: 1rem;
+  background: rgba(255, 255, 255, 0.65);
+  color: #575656;
+  line-height: 46px;
+  height: 46px;
+}
+.left-side .btn.sb1 {
+  font-size: 1.4em;
+}
+.left-side .btn.sb2 span {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0.92em;
+  line-height: 1.05em;
+}
+.left-side .btn:hover {
+  background: #f16f29;
+  color: #ffffff;
+}
+.right-side {
+  padding-left: 34px;
+}
+@media only screen and (max-width: 800px) {
+  .right-side {
+    padding-left: 0;
+  }
+}
+#news-paginator {
+  margin-bottom: 2.2em;
+}
+.aside-margin {
+  margin-top: 10rem;
 }
 form::after {
   content: "";
@@ -875,7 +954,7 @@ textarea.resize {
 .forgot-password,
 .retrieveFormBlock > form + a {
   float: left;
-  margin-top: -27px;
+  margin-top: -32px;
 }
 .filed-upgrade {
   height: auto;
@@ -945,7 +1024,7 @@ textarea.resize {
   line-height: 1.25em;
 }
 .filed-upgrade[type="checkbox"].switcher ~ .checkbox_radio::before {
-  font-size: 0.857rem;
+  font-size: 0.75rem;
   line-height: inherit;
   content: 'OFF';
   background: none;
@@ -1313,7 +1392,7 @@ aside .box-compare fieldset .mobiss-type-box {
   padding: 5px;
   color: #f25f5c;
   text-align: left;
-  font-size: 14px;
+  font-size: 16px;
   margin: 0;
 }
 .box-compare .mobissimo-search-box .errors li:before {
@@ -1717,7 +1796,7 @@ body.tablet .ui-datepicker {
   font-size: 0;
 }
 .go-to-city >* {
-  font-size: 14px;
+  font-size: 1rem;
   display: inline-block;
   vertical-align: middle;
 }
@@ -1765,7 +1844,7 @@ table {
 }
 table.best-fares .price {
   font-weight: bold;
-  font-family: 'Raleway', Arial, sans-serif;
+  font-family: 'Lato', Arial, sans-serif;
   padding-left: 8px;
   padding-right: 8px;
   border-radius: 0.5em;
@@ -2174,7 +2253,7 @@ aside .compare-providers {
 .results-table .recommendation-body .title {
   font-size: 1.5em;
   font-weight: bold;
-  font-family: 'Raleway', Arial, sans-serif;
+  font-family: 'Lato', Arial, sans-serif;
   margin: 0 0.4em 0.4em;
 }
 .recommendation-box {
@@ -2202,7 +2281,7 @@ aside .compare-providers {
   background-color: #eeeeee;
   position: relative;
   overflow: hidden;
-  font-size: 14px;
+  font-size: 16px;
   display: block;
 }
 .rec-list .rec-item:before {
@@ -2421,7 +2500,7 @@ aside .compare-providers {
   text-align: center;
 }
 .results-table .rating .stars-box:before {
-  font-size: 14px;
+  font-size: 16px;
   font-family: 'flexkit-icons';
   color: #ffd48c;
 }
@@ -2592,7 +2671,7 @@ html.tablet.loaded .mobile-loader {
   a::after {
     color: #888888;
     margin: 0 0 0 .5em;
-    font-size: 14px;
+    font-size: 16px;
     font-style: italic;
     text-decoration: underline;
   }

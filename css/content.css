@@ -835,7 +835,7 @@ ul.list-select > li.active::after {
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  width: 1000px;
+  width: 1278px;
   max-width: 95%;
 }
 .container::after {
@@ -1773,7 +1773,7 @@ ul.list-select > li.active::after {
 [class^="column_"] > *,
 [class*="-column_"] > *,
 [class*="_column_"] > * {
-  font-size: 14px;
+  font-size: 16px;
   float: none !important;
   display: inline-block;
   vertical-align: top;
@@ -1835,7 +1835,7 @@ ul.list-select > li.active::after {
 [class^="column_"] > .larger,
 [class*="-column_"] > .larger,
 [class*="_column_"] > .larger {
-  font-size: 21px !important;
+  font-size: 24px !important;
 }
 [class*=" column_"].large > *,
 [class^="column_"].large > *,
@@ -1845,7 +1845,7 @@ ul.list-select > li.active::after {
 [class^="column_"] > .large,
 [class*="-column_"] > .large,
 [class*="_column_"] > .large {
-  font-size: 17.5px !important;
+  font-size: 20px !important;
 }
 [class*=" column_"].small > *,
 [class^="column_"].small > *,
@@ -1855,7 +1855,7 @@ ul.list-select > li.active::after {
 [class^="column_"] > .small,
 [class*="-column_"] > .small,
 [class*="_column_"] > .small {
-  font-size: 11.9px !important;
+  font-size: 13.6px !important;
 }
 ._column_1 > * {
   width: 98% !important;
@@ -2371,7 +2371,7 @@ ul.list-select > li.active::after {
   font-size: 0;
 }
 .inline-block-wrap >* {
-  font-size: 14px;
+  font-size: 1rem;
   display: inline-block;
   vertical-align: middle;
 }
@@ -2523,7 +2523,7 @@ a.inherit-color:hover {
   font-family: 'Lato', Arial, sans-serif;
 }
 .ff-header {
-  font-family: 'Raleway', Arial, sans-serif;
+  font-family: 'Lato', Arial, sans-serif;
 }
 .h-auto {
   height: auto !important;
@@ -2926,7 +2926,8 @@ h6,
   margin-top: 1.5em;
   margin-bottom: 0.5em;
   color: #222222;
-  font-family: 'Raleway', Arial, sans-serif;
+  font-family: 'Lato', Arial, sans-serif;
+  line-height: 1.2;
 }
 h1:first-child:not(.logo),
 h2:first-child:not(.logo),
