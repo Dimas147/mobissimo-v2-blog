@@ -14,9 +14,9 @@
     <div class="wrap-block grid_2 alpha omega floating-block left-side">
         <div data-spy="affix" data-offset-top="150" data-offset-bottom="200">
             {$template:_header}
-            <aside>
-                <a class="btn sb1" href="http://blog.mobissimo.it">Cerca nel blog</a>
-            </aside>
+            <!--<aside>-->
+                <!--<a class="btn sb1" href="http://blog.mobissimo.it">Cerca nel blog</a>-->
+            <!--</aside>-->
             <aside class="box-white-bg thin opacity-bg news-cloud">
                 <h4 class="text-center">{$header:tag-cloud:static}</h4>
                 {$news:tagcloud}
@@ -37,17 +37,23 @@
             {$menu:main:_main menu}
         </nav>
         <div class="news-page-teaser">
-            {$directupload:news-image-{$news:id}:news-images:250::crop-720x250:nolink}
+            {$directupload:news-image-{$news:id}:news-images:250::crop-763x214:nolink}
         </div>
-        <div class="content box-white-bg opacity-bg">
+        <div class="content box-white-bg opacity-bg pt-mini">
             <!-- news content -->
-            <div class="box-grey-bg opacity-bg wrap thin fl-right social-accounts">
-                <div class="social-block padding text-center">{$template:_social share}</div>
+            <div class="fl-right wrap text-right">
+                <a href="#" class="icon-share-after" id="show-share"><span>Condividi</span></a>
+                <div id="share" class="box-grey-bg opacity-bg wrap thin social-accounts">
+                    <div class="social-block padding text-center">{$template:_social share}</div>
+                </div>
             </div>
-            {newscontent}
-            <h2 class="mt0px">{$page:h1}</h2>
-            {$content:content_key1}
-            {/newscontent}
+
+            <div class="news-content">
+                {newscontent}
+                <h2 class="mt0px">{$page:h1}</h2>
+                {$content:content_key1}
+                {/newscontent}
+            </div>
         </div>
         <div id="news-paginator" class="text-center">
             <div class="news-list-pagination paginator">
@@ -90,5 +96,14 @@
 
 <!-- Include scripts template -->
 {$template:_scripts}
+<script>
+    $(window).load(function() {
+        $("#show-share").on("click", function (event) {
+            event.preventDefault();
+            $(this).toggleClass("active");
+            $("#share").toggleClass("visible");
+        });
+    });
+</script>
 </body>
 </html>

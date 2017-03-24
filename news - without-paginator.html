@@ -4,10 +4,12 @@
     <!-- Include head template -->
     {$template:_head}
 </head>
-<body class="index">
+<body class="news-page">
 
 <!-- Container -->
 <main id="page" class="container">
+
+    <!-- Header -->
 
     <div class="wrap-block grid_2 alpha omega floating-block left-side">
         <div data-spy="affix" data-offset-top="150" data-offset-bottom="200">
@@ -34,17 +36,32 @@
         <nav id="main-menu" class="d-visible" role="navigation">
             {$menu:main:_main menu}
         </nav>
-        <div class="content box-white-bg opacity-bg">{$content:mobissimoform}</div>
-        <!-- Content box -->
-        <div class="box-white-bg opacity-bg wrap">
-            <ul class="news-list main-list" id="main-list">
-                {$newslist:_news list - main:4:desc:::pgr}
-            </ul>
+        <div class="news-page-teaser">
+            {$directupload:news-image-{$news:id}:news-images:250::crop-763x214:nolink}
         </div>
-        <div id="news-paginator" class="text-center"> </div>
+        <div class="content box-white-bg opacity-bg pt-mini">
+            <!-- news content -->
+            <div class="fl-right wrap text-right">
+                <a href="#" class="icon-share-after" id="show-share"><span>Condividi</span></a>
+                <div id="share" class="box-grey-bg opacity-bg wrap thin social-accounts">
+                    <div class="social-block padding text-center">{$template:_social share}</div>
+                </div>
+            </div>
+
+            <div class="news-content">
+                {newscontent}
+                <h2 class="mt0px">{$page:h1}</h2>
+                {$content:content_key1}
+                {/newscontent}
+            </div>
+        </div>
+        <!--<div id="news-paginator" class="text-center">-->
+            <!--<div class="news-list-pagination paginator">-->
+                <!--<a class="paginations" href="http://blog.mobissimo.it">Home page</a>-->
+            <!--</div>-->
+        <!--</div>-->
         {$template:_footer}
     </div>
-
     <aside class="grid_2 alpha omega right-side aside-margin" role="complementary">
         <div class="box-grey-bg opacity-bg wrap thin social-accounts">
             <div class="social-block text-center">{$template:_social links}</div>
@@ -69,6 +86,7 @@
     </aside>
 </main>
 
+
 <!-- Footer -->
 <!-- Include Footer template -->
 <!--{$ template:_footer}-->
@@ -80,10 +98,11 @@
 {$template:_scripts}
 <script>
     $(window).load(function() {
-        $('#main-list .news-list-pagination').appendTo($('#news-paginator'));
-        $('<a class="paginations" href="http://blog.mobissimo.it">Home page</a>').prependTo($('#news-paginator .paginator'));
-        $(".news-list-pagination :contains('Next')").text("Pagina successiva >");
-        $(".news-list-pagination :contains('Previous')").text("< Pagina precedente");
+        $("#show-share").on("click", function (event) {
+            event.preventDefault();
+            $(this).toggleClass("active");
+            $("#share").toggleClass("visible");
+        });
     });
 </script>
 </body>

@@ -18,7 +18,7 @@ extend ' .mobile-menu li' has no matches
 }
 @media only screen and (min-width: 800px) {
   #main-menu {
-    margin-bottom: 1.5em;
+    margin-bottom: 1.3em;
   }
   .main_menu {
     position: relative;

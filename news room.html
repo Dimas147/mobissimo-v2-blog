@@ -1,58 +1,95 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <!-- Include head template -->
-        {$template:_head}
-    </head>
-    <body>
+<head>
+    <!-- Include head template -->
+    {$template:_head}
+</head>
+<body class="news-page">
 
-        <!-- Container -->
-        <div id="page" class="container">
+<!-- Container -->
+<main id="page" class="container">
 
-            <!-- Include header template -->
+    <!-- Header -->
+
+    <div class="wrap-block grid_2 alpha omega floating-block left-side">
+        <div data-spy="affix" data-offset-top="150" data-offset-bottom="200">
             {$template:_header}
-
-            <h1 class="grid_12" role="heading">{$page:h1}</h1>
-
-            <!-- Content box -->
-            <section class="grid_9" role="main">
-                <!-- news list -->
-            {newslist:NEWS-LIST_NAME}
-                <article class="news-item">
-                    {$news:actions}
-                    <time class="news-item-date small block mb10px" datetime="{$news:date:Y-m-d}">
-                        <i class="icon-calendar2 icon16"></i>
-                        {$news:date: M d, Y}
-                    </time>
-                    <a class="news-item-image text-center grid_3 alpha" href="{$news:url}">
-                        <img src="{$news:preview}" alt="{$news:title:inline}"/>
-                    </a>
-                    <a class="news-item-title large grid_9 omega mb10px" href="{$news:url}">{$news:title}</a>
-                    <p class="news-item-description grid_9 omega mb10px">{$news:teaser}</p>
-                    <p class="news-item-tags small cl-both text-right">{$news:tags}</p>
-                </article>
-            {/newslist}
-            </section>
-
-            <!-- Right box -->
-            <aside class="grid_3" role="complementary">
-                {repeat:Aside right box:key:1}
-                <section class="aside-box">
-                    <h3>{$header:right_key}</h3>
-                    {$content:right_key}
-                </section>
-                {/repeat}
+            <!--<aside>-->
+                <!--<a class="btn sb1" href="http://blog.mobissimo.it">Cerca nel blog</a>-->
+            <!--</aside>-->
+            <aside class="box-white-bg thin opacity-bg news-cloud">
+                <h4 class="text-center">{$header:tag-cloud:static}</h4>
+                {$news:tagcloud}
             </aside>
-
-            <!-- Footer -->
-            <!-- Include Footer template -->
-            {$template:_footer}
+            <aside>
+                <button class="dialog-btn btn sb2 block" data-dialog-element="#add-to-archive"><span>{$header:add-to-archive-btn:static}</span></button>
+            </aside>
+            <div class="some-text">
+                {$content:text:static}
+            </div>
         </div>
+    </div>
 
-        <!-- Include mobile elements template -->
-        {$template:_mobile elements}
+    <div class="grid_8 alpha omega main">
+        <p class="top-text">{$header:toptext:static}</p>
+        <!-- Main Menu -->
+        <nav id="main-menu" class="d-visible" role="navigation">
+            {$menu:main:_main menu}
+        </nav>
+        <div class="box-white-bg opacity-bg wrap">
+            <ul class="news-list main-list" id="main-list">
+                {newslist:NEWS-LIST_NAME}
+                <li class="news-item">
+                    {$news:actions}
+                    <a class="news-item-title mb10px" href="{$news:url}">{$news:title}</a>
+                    <a class="news-item-image text-center" href="{$news:url}">
+                        <img src="{$news:preview:crop:330x200}" alt="{$news:title:inline}"/>
+                    </a>
 
-        <!-- Include scripts template -->
-        {$template:_scripts}
-    </body>
+                    <p class="news-item-description mb0px">{$news:teaser}</p>
+
+                    <p class="news-item-description mb0px"><a href="{$news:url}" class="read-more">Continua a
+                        leggere</a></p>
+                </li>
+                {/newslist}
+            </ul>
+        </div>
+        {$template:_footer}
+    </div>
+    <aside class="grid_2 alpha omega right-side aside-margin" role="complementary">
+        <div class="box-grey-bg opacity-bg wrap thin social-accounts">
+            <div class="social-block text-center">{$template:_social links}</div>
+        </div>
+        <ul class="news-list">
+            {newslist:news-list-right:3}
+            <li class="news-item">
+                {$news:actions}
+                <a class="news-item-title text-left mb10px" href="{$news:url}">{$news:title}</a>
+
+                <div class="news-item-image">
+                    {$imageonly:news-{$news:id}:152:static:readonly}
+                </div>
+                {adminonly}
+                <div class="admin-hide-image">
+                    {$imageonly:news-{$news:id}:152:static}
+                </div>
+                {/adminonly}
+                <p class="news-item-description mb0px">{$news:teaser::150}</p>
+            </li>
+            {/newslist}
+        </ul>
+    </aside>
+</main>
+
+
+<!-- Footer -->
+<!-- Include Footer template -->
+<!--{$ template:_footer}-->
+
+<!-- Include mobile elements template -->
+{$template:_mobile elements}
+
+<!-- Include scripts template -->
+{$template:_scripts}
+</body>
 </html>

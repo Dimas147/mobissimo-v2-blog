@@ -15,7 +15,7 @@ main {
   min-height: 100%;
 }
 header {
-  margin-bottom: 2.5em;
+  margin-bottom: 2.8em;
   overflow: hidden;
   text-align: center;
   font-family: 'Lato', Arial, sans-serif;
@@ -35,13 +35,12 @@ header {
   }
 }
 header .logo {
-  margin-top: 0;
   margin-bottom: 0;
   text-align: left;
 }
 header .logo a {
   display: block;
-  margin-top: -120px;
+  margin-top: -152px;
   max-width: 177px;
   font-family: inherit;
   font-weight: 400;
@@ -392,7 +391,7 @@ aside .social-block .btn {
   top: 6em;
 }
 .news-page-teaser {
-  margin-bottom: 2.5em;
+  margin-bottom: 2.4em;
 }
 .news-page-teaser img {
   width: 100%;
@@ -588,6 +587,9 @@ footer .flag-list .com {
   background: #f16f29;
   color: #ffffff;
 }
+.left-side .btn.hide {
+  display: none;
+}
 .right-side {
   padding-left: 34px;
 }
@@ -601,6 +603,56 @@ footer .flag-list .com {
 }
 .aside-margin {
   margin-top: 10rem;
+}
+.news-content {
+  font-size: 0.95em;
+  font-weight: normal;
+  line-height: 1.2;
+}
+.news-content h2,
+.news-content h3 {
+  font-weight: bold;
+  font-size: 1.46em;
+}
+.news-content h3 {
+  font-size: 1.3em;
+}
+.news-content h3 a {
+  text-decoration: none;
+  color: #f16f29;
+}
+.news-content h3 a:hover {
+  color: #575656;
+}
+#show-share {
+  font-size: 14px;
+  color: #575656;
+  text-decoration: none;
+  margin-top: -5px;
+  margin-bottom: 20px;
+  display: inline-block;
+  vertical-align: middle;
+}
+#show-share:hover,
+#show-share.active {
+  color: #f16f29;
+}
+#show-share span,
+#show-share::after {
+  display: inline-block;
+  vertical-align: middle;
+}
+#share {
+  opacity: 0;
+  transition: all 0.3s;
+  pointer-events: none;
+}
+#share.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.content:empty {
+  display: none;
 }
 form::after {
   content: "";
@@ -775,6 +827,15 @@ form#newsletter [type="submit"] {
 }
 form#newsletter .email:focus ~ [type="submit"] {
   display: block;
+}
+form#formaddtoarchive input[type="text"],
+form#formaddtoarchive select,
+form#formaddtoarchive textarea {
+  border-color: #f16f29;
+  height: auto;
+}
+form#formaddtoarchive .captcha {
+  text-align: center;
 }
 fieldset legend {
   font-size: 1.25em;

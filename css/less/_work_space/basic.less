@@ -37,7 +37,7 @@ main {
 //==================================================
 header {
     //padding-top     : 16.5em;
-    margin-bottom: 2.5em;
+    margin-bottom: 2.8em;
     overflow: hidden;
     text-align: center;
     font-family: @font-family-headings;
@@ -55,12 +55,11 @@ header {
 
     // -- LOGO Style
     .logo {
-        margin-top: 0;
         margin-bottom: 0;
         text-align: left;
         a {
             display: block;
-            margin-top: -120px;
+            margin-top: -152px;
             max-width: 177px;
             //margin-top      : 0.5em;
             //margin-bottom   : 0.5em;
@@ -314,7 +313,7 @@ section {
 }
 
 .news-page-teaser {
-    margin-bottom: 2.5em;
+    margin-bottom: 2.4em;
     img {
         width: 100%;
     }
@@ -493,6 +492,9 @@ footer {
             background: @brand-primary;
             color: @primary-color;
         }
+        &.hide{
+            display: none;
+        }
     }
 }
 
@@ -509,4 +511,58 @@ footer {
 
 .aside-margin{
     margin-top: 10rem;
+}
+
+.news-content{
+    font-size: 0.95em;
+    font-weight: normal;
+    line-height: 1.2;
+    h2, h3{
+        font-weight: bold;
+        font-size: 1.46em;
+    }
+    h3{
+        font-size: 1.3em;
+        a{
+            text-decoration: none;
+            color: @brand-primary;
+            &:hover{
+                color: @text-color;
+            }
+        }
+    }
+}
+
+#show-share{
+    font-size: 14px;
+    color: @text-color;
+    text-decoration: none;
+    margin-top: -5px;
+    margin-bottom: 20px;
+    .inline-block();
+    &:hover, &.active{
+        color: @brand-primary;
+    }
+    span, &::after{
+        .inline-block(middle);
+    }
+}
+#share{
+    .opacity(0);
+    .transition();
+    pointer-events: none;
+    &.visible{
+        .opacity(1);
+        pointer-events: auto;
+    }
+}
+
+.pt-mini{
+    //padding-top: 12px;
+}
+
+.content{
+    &:empty{
+        display: none;
+    }
 }
